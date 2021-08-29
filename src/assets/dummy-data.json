@@ -1,0 +1,139 @@
+[
+  {
+    "categories": [
+      {
+        "name": "pizza",
+        "subCategories": [
+          { "id": "p1", "name": "margherita", "price": "10" },
+          {
+            "id": "p2",
+            "name": "🍍 hawaii",
+            "price": "8"
+          },
+          {
+            "id": "p3",
+            "name": "4 seasons",
+            "price": "10"
+          },
+          {
+            "id": "p4",
+            "name": "4 cheese",
+            "price": "15"
+          },
+          {
+            "id": "p5",
+            "name": "teriyaki",
+            "price": "10"
+          },
+          {
+            "id": "p6",
+            "name": "chicken ranch",
+            "price": "12"
+          },
+          {
+            "id": "p7",
+            "name": "double pepperoni",
+            "price": "10"
+          },
+          {
+            "id": "p8",
+            "name": "margherita",
+            "price": "10"
+          },
+          {
+            "id": "p9",
+            "name": "ham and mushrooms",
+            "price": "8"
+          }
+        ]
+      },
+      {
+        "name": "pasta",
+        "subCategories": [
+          { "id": "ps1", "name": "pappardelle", "price": "12" },
+          {
+            "id": "ps2",
+            "name": "orecchiette",
+            "price": "8"
+          },
+          {
+            "id": "ps3",
+            "name": "macaroni",
+            "price": "15"
+          },
+          {
+            "id": "ps4",
+            "name": "linguine",
+            "price": "9"
+          },
+          {
+            "id": "ps5",
+            "name": "farfalle",
+            "price": "12"
+          }
+        ]
+      },
+      {
+        "name": "icecream",
+        "subCategories": [
+          { "id": "ic1", "name": "vanilla", "price": "10" },
+          {
+            "id": "ic2",
+            "name": "chocolate",
+            "price": "8"
+          },
+          {
+            "id": "ic3",
+            "name": "cookies & cream",
+            "price": "8"
+          },
+          {
+            "id": "ic4",
+            "name": "strawberry",
+            "price": "12"
+          },
+          {
+            "id": "ic5",
+            "name": "neapolitan",
+            "price": "12"
+          },
+          {
+            "id": "ic6",
+            "name": "cotton candy",
+            "price": "8"
+          },
+          {
+            "id": "ic7",
+            "name": "mango",
+            "price": "15"
+          },
+          {
+            "id": "ic8",
+            "name": "butterscotch",
+            "price": "12"
+          },
+          {
+            "id": "ic9",
+            "name": "match",
+            "price": "6"
+          },
+          {
+            "id": "ic10",
+            "name": "cherry",
+            "price": "10"
+          },
+          {
+            "id": "ic11",
+            "name": "smurf",
+            "price": "12"
+          },
+          {
+            "id": "ic12",
+            "name": "stracciatella",
+            "price": "13"
+          }
+        ]
+      }
+    ]
+  }
+]

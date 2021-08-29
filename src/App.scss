@@ -1,0 +1,288 @@
+@import "~bootstrap/scss/bootstrap";
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+);
+
+.user-icon {
+  color: white;
+  background-color: $gray-800;
+}
+.container-left {
+  background-color: $gray-900;
+  height: 98.2vh;
+  margin-top: -25px;
+  border-radius: 0px 20px 0px 0px;
+  -webkit-border-radius: 0px 20px 0px 0px;
+  -moz-border-radius: 0px 20px 0px 0px;
+  -ms-border-radius: 0px 20px 0px 0px;
+  -o-border-radius: 0px 20px 0px 0px;
+}
+.hide {
+  display: none;
+}
+.container-top {
+  background-color: $gray-800;
+  height: 5vh;
+  color: white;
+}
+.container-center {
+  background-color: #eef;
+  height: 95vh;
+  overflow: scroll;
+}
+.container-right {
+  background-color: white;
+  height: 98.2vh;
+  margin-top: -25px;
+  border-radius: 20px 0px 0px 0px;
+  -webkit-border-radius: 20px 0px 0px 0px;
+  -moz-border-radius: 20px 0px 0px 0px;
+  -ms-border-radius: 20px 0px 0px 0px;
+  -o-border-radius: 20px 0px 0px 0px;
+}
+.gradient {
+  background-image: linear-gradient(to right, $gray-900, $gray-700);
+  font-size: large;
+  & span {
+    font-size: x-large;
+  }
+}
+.tile {
+  background-color: $gray-900;
+  font-size: large;
+  & span {
+    font-size: x-large;
+  }
+}
+.bottom-menu {
+  padding: 10px 20px;
+}
+
+.stackCard1 {
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: 25px;
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.stackCard2 {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  margin: 20px;
+  margin-top: 18px;
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.stackCard3 {
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 15px;
+  margin-top: 25px;
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.stackCard5 {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  margin: 10px;
+  margin-left: 18px;
+  margin-top: 41px;
+  z-index: 1;
+  background-color: transparent;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  & div {
+    position: absolute;
+    right: 3px;
+    bottom: 1px;
+    color: #aaa;
+  }
+}
+.stackCard4 {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin: 10px;
+  margin-top: 34px;
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  text-align: center;
+  & div {
+    position: absolute;
+    text-transform: capitalize;
+    font-size: large;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    font-weight: 500;
+  }
+}
+.click-card {
+  position: absolute;
+  width: 8rem;
+  height: 9.2rem;
+  margin: 10px;
+  margin-top: 19px;
+  background-color: transparent;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  z-index: 2;
+}
+.single-details {
+  position: relative;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  width: 9rem;
+  height: 9rem;
+  margin: 11px;
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  text-align: center;
+  & .dish-cat {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #aaa;
+  }
+  & .dish-name {
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+  & .dish-price {
+    position: absolute;
+    font-weight: 500;
+    bottom: 3%;
+    right: 45%;
+  }
+  & .click-mask {
+    position: absolute;
+    background-color: transparent;
+    width: 9rem;
+    height: 9rem;
+    z-index: 1;
+    top: 0;
+  }
+}
+.back-icon {
+  position: absolute;
+  font-size: 45px;
+  left: 50%;
+  top: 40%;
+  color: #eb5757;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.qty-count {
+  text-align: center;
+  font-weight: 500;
+  margin: 5px;
+  margin-left: 15px;
+  padding-top: 5px;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 15px;
+  border: 4px solid #eee;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.cart-item-title {
+  margin-top: 2px;
+  font-weight: 500;
+  & div {
+    font-weight: 300;
+  }
+}
+@media (max-width: 768px) {
+  .container-left {
+    background-color: $gray-900;
+    height: 98.2vh;
+    margin-top: -50px;
+    border-radius: 0px 20px 0px 0px;
+    -webkit-border-radius: 0px 20px 0px 0px;
+    -moz-border-radius: 0px 20px 0px 0px;
+    -ms-border-radius: 0px 20px 0px 0px;
+    -o-border-radius: 0px 20px 0px 0px;
+  }
+  .container-right {
+    background-color: white;
+    height: 98.2vh;
+    margin-top: 1px;
+    border-radius: 20px 0px 0px 0px;
+    -webkit-border-radius: 20px 0px 0px 0px;
+    -moz-border-radius: 20px 0px 0px 0px;
+    -ms-border-radius: 20px 0px 0px 0px;
+    -o-border-radius: 20px 0px 0px 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .layout-right {
+    width: 25%;
+  }
+  .layout-center {
+    width: 75%;
+  }
+  .layout-left {
+    width: 25%;
+  }
+}
