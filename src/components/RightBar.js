@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from "uuid/v4";
 import CartList from "./CartList";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   BiBox,
   AiOutlineUser,
@@ -9,12 +9,10 @@ import {
   FcRating,
   RiArrowDropDownLine,
   IoMdAddCircleOutline,
-  MdArrowDropDown,
 } from "react-icons/all";
 
 const RightBar = () => {
   const { cartitems } = useSelector((state) => state.CartReducer);
-  const dispatch = useDispatch();
   let totalCartVal = 0;
   const cartCards = cartitems
     ?.slice(0)
