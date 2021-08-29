@@ -7,6 +7,7 @@ import uuid from "uuid/v4";
 const CentreLayout = () => {
   const [detaiView, setDetaiView] = useState(false);
   const [catType, setCatType] = useState("");
+  const [state, setstate] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -31,30 +32,30 @@ const CentreLayout = () => {
       </div>
     );
   });
-  // const { cartitems } = useSelector((state) => state.CartReducer);
   let store = [];
   const detailClickHandler = (e) => {
-    const filter = store?.reduce((acc, cur) => {
-      if (cur.dishName !== e.target.parentNode.childNodes[1].innerHTML) {
-        store.push({
-          catName: e.target.parentNode.childNodes[0].innerHTML,
-          dishName: e.target.parentNode.childNodes[1].innerHTML,
-          dishPrice: e.target.parentNode.childNodes[2].innerHTML,
-          qty: 1,
-        });
-      } else {
-        store.push({
-          ...store,
-          qty: store.qty + 1,
-        });
+    const catNam = e.target.parentNode.childNodes[0].innerHTML;
+    const dishNam = e.target.parentNode.childNodes[1].innerHTML;
+    const dishPric = e.target.parentNode.childNodes[2].innerHTML;
+    store.reduce((acc, cur, ind) => {
+      if (cur.dishName === dishNam) {
+        store[ind].qty += 1;
       }
     }, 0);
-    // let tempdata = {
-    //   catName: e.target.parentNode.childNodes[0].innerHTML,
-    //   dishName: e.target.parentNode.childNodes[1].innerHTML,
-    //   dishPrice: e.target.parentNode.childNodes[2].innerHTML,
-    // };
+    const check = store.find((el) => el.dishName === dishNam);
+    if (check) {
+      return;
+    } else {
+      store.push({
+        catName: catNam,
+        dishName: dishNam,
+        dishPrice: dishPric,
+        qty: 1,
+      });
+    }
     dispatch({ type: "CARTITEMS", payload: store });
+    setstate(store);
+    console.log(store);
   };
   let details = data[0].categories.map((el) => {
     if (el.name === catType.toLowerCase()) {

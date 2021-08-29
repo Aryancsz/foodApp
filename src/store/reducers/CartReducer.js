@@ -7,11 +7,7 @@ const initialState = {
 const CartReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "CARTITEMS":
-      return {
-        ...state,
-        cartitems: [...state.cartitems, payload],
-      };
-
+      return { ...state, cartitems: payload };
     default:
       return state;
   }

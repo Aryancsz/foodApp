@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import uuid from "uuid/v4";
+import CartList from "./CartList";
 import { useSelector } from "react-redux";
 import {
   BiBox,
@@ -7,40 +8,20 @@ import {
   BiDotsHorizontalRounded,
   FcRating,
   RiArrowDropDownLine,
+  IoMdAddCircleOutline,
 } from "react-icons/all";
 
 const RightBar = () => {
-  const [update, setUpdate] = useState([{}]);
-  let arr = [];
-  let qty = 1;
-  let cartVal = 0;
   const { cartitems } = useSelector((state) => state.CartReducer);
-  let store = {};
-  // const cartCards = cartitems.map((el) => {
-  //   cartVal += Number(el.dishPrice?.replace("$", ""));
-  // if (el.dishName !== store.dishName) {
-  //   store = {
-  //     dishName: el.dishName,
-  //     dishPrice: el.dishPrice,
-  //     [el.dishName]: 1,
-  //   };
-  // } else {
-  //   // store = { ...store, dishQty: store.dishQty + 1 };
-  //   store[el.dishName] += 1;
-  // }
-  // return (
-  //   <div key={uuid()}>
-  //     <div className='d-flex relative'>
-  //       <div className='qty-count'>{store[el.dishName]}</div>
-  //       <div className='cart-item-title'>
-  //         {el.dishName}
-  //         <div>{el.dishPrice}</div>
-  //       </div>
-  //     </div>
-  //   </div>
-  //   );
-  // });
-  // console.log(arr);
+  let totalCartVal = 0;
+  const cartCards = cartitems?.map((el) => {
+    totalCartVal += Number(el.dishPrice?.replace("$", ""));
+    return (
+      <div key={uuid()}>
+        <CartList data={el} />
+      </div>
+    );
+  });
 
   return (
     <React.Fragment>
@@ -84,8 +65,32 @@ const RightBar = () => {
           </div>
           <hr />
         </div>
-        {/* <div>{cartCards}</div> */}
-        {/* <div>{cartVal}</div> */}
+        <div className='list-container'>{cartCards}</div>
+        <div className='d-flex justify-content-between justify-content-center align-items-center'>
+          <div
+            style={{ marginLeft: "10px", marginTop: "5px", color: "#eb5757" }}
+          >
+            Discount
+          </div>
+          <div
+            style={{
+              marginRight: "10px",
+              fontSize: "25px",
+              color: "#eb5757",
+            }}
+          >
+            <IoMdAddCircleOutline />
+          </div>
+        </div>
+        <hr />
+        <div className='d-flex justify-content-between total-bar'>
+          <div>Total</div>
+          <div>$ {totalCartVal}</div>
+        </div>
+        <div className='d-flex justify-content-between place-btn'>
+          <div>Pay</div>
+          <div>$ {totalCartVal}</div>
+        </div>
       </div>
     </React.Fragment>
   );
