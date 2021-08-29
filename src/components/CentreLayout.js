@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import data from "../assets/dummy-data.json";
-import { TiArrowBack } from "react-icons/all";
+import { TiArrowBack, MdArrowDropUp } from "react-icons/all";
 import uuid from "uuid/v4";
 
-const CentreLayout = ({ store }) => {
+const CentreLayout = ({ store, setBtnBtom, btnBtom }) => {
   const [detaiView, setDetaiView] = useState(false);
   const [catType, setCatType] = useState("");
   const dispatch = useDispatch();
@@ -115,6 +115,14 @@ const CentreLayout = ({ store }) => {
               <div className='bottom-menu'>Coffee</div>
               <div className='bottom-menu'>Breakfast</div>
             </div>
+          </div>
+          <div
+            className='d-block d-md-none bottom-draw'
+            onClick={() => {
+              setBtnBtom(true);
+            }}
+          >
+            <MdArrowDropUp />
           </div>
         </div>
       </div>

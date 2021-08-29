@@ -294,9 +294,6 @@ $colors: (
   .container-center {
     overflow: scroll;
   }
-  .body {
-    overflow: scroll;
-  }
 }
 
 .list-container {
@@ -326,6 +323,20 @@ $colors: (
 .sub-total {
   margin-right: 10px;
   font-weight: 500;
+}
+
+.bottom-draw {
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+  height: 2rem;
+  background-image: linear-gradient(to top, #f5baba, #eb5757);
+  -webkit-border-radius: 30px 30px 0 0;
+  -moz-border-radius: 30px 30px 0 0;
+  -ms-border-radius: 30px 30px 0 0;
+  -o-border-radius: 30px 30px 0 0;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 3px;
 }
 
 @media (min-width: 768px) {

@@ -9,9 +9,10 @@ import {
   FcRating,
   RiArrowDropDownLine,
   IoMdAddCircleOutline,
+  MdArrowDropDown,
 } from "react-icons/all";
 
-const RightBar = () => {
+const RightBar = ({ setBtnBtom, btnBtom }) => {
   const { cartitems } = useSelector((state) => state.CartReducer);
   let totalCartVal = 0;
   const cartCards = cartitems
@@ -29,6 +30,14 @@ const RightBar = () => {
   return (
     <React.Fragment>
       <div className='container-right'>
+        <div
+          className='d-block d-md-none bottom-draw'
+          onClick={() => {
+            setBtnBtom(false);
+          }}
+        >
+          <MdArrowDropDown />
+        </div>
         <div className='d-flex'>
           <div className='mx-2 mt-1' style={{ paddingLeft: "15px" }}>
             <BiBox />
