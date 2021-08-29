@@ -1,14 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BiSearchAlt, RiQrScanLine, FiMenu } from "react-icons/all";
 
 const TopBar = ({ toggle, setToggle }) => {
+  const { menu } = useSelector((state) => state.CartReducer);
   return (
     <React.Fragment>
       <div className='container-top d-flex'>
-        <div className='w-25'></div>
-        <div className='w-50 d-flex justify-content-between'>
+        <div className={`w-25 ${toggle ? "d-none" : ""}`}></div>
+        <div
+          className={` ${
+            !toggle ? "w-50" : "w-100"
+          } d-flex justify-content-between`}
+        >
           <div
-            className='d-md-none'
+            className='d-md-none px-2'
             onClick={() => {
               if (toggle) {
                 document
@@ -26,15 +32,15 @@ const TopBar = ({ toggle, setToggle }) => {
           >
             <FiMenu />
           </div>
-          <div style={{ fontSize: "20px" }} className='mx-2'>
+          <div style={{ fontSize: "20px" }}>
             <BiSearchAlt />
           </div>
-          <div>Menu</div>
-          <div className='px-3'>
+          <div className='mt-1'>{menu}</div>
+          <div className='px-2'>
             <RiQrScanLine />
           </div>
         </div>
-        <div className='w-25'></div>
+        <div className={`w-25 ${toggle ? "d-none" : ""}`}></div>
       </div>
     </React.Fragment>
   );

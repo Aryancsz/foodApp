@@ -33,9 +33,7 @@ $colors: (
 .hide {
   visibility: hidden;
 }
-.visible {
-  visibility: none;
-}
+
 .container-top {
   background-color: $gray-800;
   height: 5vh;
@@ -44,7 +42,7 @@ $colors: (
 .container-center {
   background-color: #eef;
   height: 95vh;
-  overflow: scroll;
+  overflow: hidden;
 }
 .container-right {
   background-color: white;
@@ -293,10 +291,14 @@ $colors: (
     -ms-border-radius: 20px 0px 0px 0px;
     -o-border-radius: 20px 0px 0px 0px;
   }
+  .container-center {
+    overflow: scroll;
+  }
+  .body {
+    overflow: scroll;
+  }
 }
-body {
-  overflow: hidden;
-}
+
 .list-container {
   overflow: hidden;
   height: 50vh;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import data from "../assets/dummy-data.json";
 import { TiArrowBack } from "react-icons/all";
 import uuid from "uuid/v4";
@@ -12,6 +12,10 @@ const CentreLayout = ({ store }) => {
   const clickHandler = (e) => {
     setCatType(String(e.target.parentElement.childNodes[5].innerText));
     setDetaiView(true);
+    dispatch({
+      type: "MENU",
+      payload: String(e.target.parentElement.childNodes[5].innerText),
+    });
   };
 
   const categories = data[0].categories.map((el) => {
@@ -39,6 +43,7 @@ const CentreLayout = ({ store }) => {
         store[ind].qty += 1;
         dispatch({ type: "CARTITEMS", payload: store });
       }
+      return null;
     }, 0);
     const check = store.find((el) => el.dishName === dishNam);
     if (check) {
@@ -81,7 +86,13 @@ const CentreLayout = ({ store }) => {
             <div className='d-flex flex-wrap'>
               <div
                 className='single-details'
-                onClick={(e) => setDetaiView(false)}
+                onClick={(e) => {
+                  setDetaiView(false);
+                  dispatch({
+                    type: "MENU",
+                    payload: "Menu",
+                  });
+                }}
               >
                 <div className='back-icon'>
                   <TiArrowBack />
@@ -92,7 +103,6 @@ const CentreLayout = ({ store }) => {
           ) : (
             <div className='d-flex flex-wrap'>{categories}</div>
           )}
-          }
           <div className='flex-grow-1 d-flex flex-column justify-content-end'>
             <div className='d-flex' style={{ backgroundColor: "#FFFFF0" }}>
               <div className='bottom-menu'>All categories</div>

@@ -6,6 +6,7 @@ import RightBar from "./RightBar";
 
 const MainLayout = () => {
   const [toggle, setToggle] = useState(false);
+
   let store = [];
   return (
     <React.Fragment>
@@ -13,7 +14,7 @@ const MainLayout = () => {
         <TopBar toggle={toggle} setToggle={setToggle} />
       </div>
       <div className='d-flex flex-column flex-md-row'>
-        <div className='layout-left'>
+        <div className={`layout-left ${toggle ? "d-none" : ""}`}>
           <LeftBar toggle={toggle} setToggle={setToggle} />
         </div>
         <div className='layout-center'>

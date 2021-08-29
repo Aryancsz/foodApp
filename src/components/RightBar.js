@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import uuid from "uuid/v4";
 import CartList from "./CartList";
 import { useSelector } from "react-redux";
@@ -14,14 +14,17 @@ import {
 const RightBar = () => {
   const { cartitems } = useSelector((state) => state.CartReducer);
   let totalCartVal = 0;
-  const cartCards = cartitems?.map((el) => {
-    totalCartVal += Number(el.dishPrice?.replace("$", "")) * el.qty;
-    return (
-      <div key={uuid()}>
-        <CartList data={el} />
-      </div>
-    );
-  });
+  const cartCards = cartitems
+    ?.slice(0)
+    .reverse()
+    .map((el) => {
+      totalCartVal += Number(el.dishPrice?.replace("$", "")) * el.qty;
+      return (
+        <div key={uuid()}>
+          <CartList data={el} />
+        </div>
+      );
+    });
 
   return (
     <React.Fragment>
