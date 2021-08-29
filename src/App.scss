@@ -250,10 +250,26 @@ $colors: (
   -o-border-radius: 50%;
 }
 .cart-item-title {
+  position: relative;
   margin-top: 2px;
   font-weight: 500;
+  text-transform: capitalize;
   & div {
     font-weight: 300;
+  }
+  & .cat-type {
+    position: absolute;
+    text-transform: uppercase;
+    color: #ddd;
+    margin-left: 90px;
+    bottom: 35%;
+    font-size: 18px;
+    font-weight: 500;
+    transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
   }
 }
 @media (max-width: 768px) {

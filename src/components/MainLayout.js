@@ -6,7 +6,7 @@ import RightBar from "./RightBar";
 
 const MainLayout = () => {
   const [toggle, setToggle] = useState(false);
-
+  let store = [];
   return (
     <React.Fragment>
       <div className='h-25'>
@@ -17,7 +17,7 @@ const MainLayout = () => {
           <LeftBar toggle={toggle} setToggle={setToggle} />
         </div>
         <div className='layout-center'>
-          <CentreLayout />
+          <CentreLayout store={store} />
         </div>
         <div className='layout-right'>
           <RightBar />

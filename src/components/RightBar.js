@@ -15,7 +15,7 @@ const RightBar = () => {
   const { cartitems } = useSelector((state) => state.CartReducer);
   let totalCartVal = 0;
   const cartCards = cartitems?.map((el) => {
-    totalCartVal += Number(el.dishPrice?.replace("$", ""));
+    totalCartVal += Number(el.dishPrice?.replace("$", "")) * el.qty;
     return (
       <div key={uuid()}>
         <CartList data={el} />

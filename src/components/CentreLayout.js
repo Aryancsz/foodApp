@@ -4,11 +4,9 @@ import data from "../assets/dummy-data.json";
 import { TiArrowBack } from "react-icons/all";
 import uuid from "uuid/v4";
 
-const CentreLayout = () => {
+const CentreLayout = ({ store }) => {
   const [detaiView, setDetaiView] = useState(false);
   const [catType, setCatType] = useState("");
-  const [state, setstate] = useState([]);
-
   const dispatch = useDispatch();
 
   const clickHandler = (e) => {
@@ -32,7 +30,6 @@ const CentreLayout = () => {
       </div>
     );
   });
-  let store = [];
   const detailClickHandler = (e) => {
     const catNam = e.target.parentNode.childNodes[0].innerHTML;
     const dishNam = e.target.parentNode.childNodes[1].innerHTML;
@@ -40,6 +37,7 @@ const CentreLayout = () => {
     store.reduce((acc, cur, ind) => {
       if (cur.dishName === dishNam) {
         store[ind].qty += 1;
+        dispatch({ type: "CARTITEMS", payload: store });
       }
     }, 0);
     const check = store.find((el) => el.dishName === dishNam);
@@ -54,8 +52,6 @@ const CentreLayout = () => {
       });
     }
     dispatch({ type: "CARTITEMS", payload: store });
-    setstate(store);
-    console.log(store);
   };
   let details = data[0].categories.map((el) => {
     if (el.name === catType.toLowerCase()) {
