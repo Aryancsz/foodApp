@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from "uuid/v4";
 import CartList from "./CartList";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   BiBox,
   AiOutlineUser,
@@ -12,8 +12,9 @@ import {
   MdArrowDropDown,
 } from "react-icons/all";
 
-const RightBar = ({ setBtnBtom, btnBtom }) => {
+const RightBar = () => {
   const { cartitems } = useSelector((state) => state.CartReducer);
+  const dispatch = useDispatch();
   let totalCartVal = 0;
   const cartCards = cartitems
     ?.slice(0)
@@ -30,14 +31,6 @@ const RightBar = ({ setBtnBtom, btnBtom }) => {
   return (
     <React.Fragment>
       <div className='container-right'>
-        <div
-          className='d-block d-md-none bottom-draw'
-          onClick={() => {
-            setBtnBtom(false);
-          }}
-        >
-          <MdArrowDropDown />
-        </div>
         <div className='d-flex'>
           <div className='mx-2 mt-1' style={{ paddingLeft: "15px" }}>
             <BiBox />
