@@ -1,5 +1,5 @@
 import React from "react";
-
+//Seperate component for list of items in cart. to handle click events features in future.
 const CartList = ({ data }) => {
   return (
     <div>

@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { BiSearchAlt, RiQrScanLine, FiMenu } from "react-icons/all";
 
 const TopBar = ({ toggle, setToggle }) => {
+  // loading from redux store to update top bar title
+  // handling click to toggle sidebbar only on mobile devices
   const { menu } = useSelector((state) => state.CartReducer);
   return (
     <React.Fragment>

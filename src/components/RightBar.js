@@ -12,8 +12,11 @@ import {
 } from "react-icons/all";
 
 const RightBar = () => {
+  // loading stored data from redux
   const { cartitems } = useSelector((state) => state.CartReducer);
+  // initializing total cart value to 0
   let totalCartVal = 0;
+  // rendering list by latest on top of stack
   const cartCards = cartitems
     ?.slice(0)
     .reverse()

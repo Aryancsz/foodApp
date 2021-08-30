@@ -5,8 +5,11 @@ import CentreLayout from "./CentreLayout";
 import RightBar from "./RightBar";
 
 const MainLayout = () => {
+  // toggle state on parent child and passing as props to not reset data when component loads
   const [toggle, setToggle] = useState(false);
+  // store object for redux store to be dispatched by child after each interaction
   let store = [];
+  // all main page components
   return (
     <React.Fragment>
       <div className='h-25'>

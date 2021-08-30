@@ -8,6 +8,9 @@ import {
   BiLock,
 } from "react-icons/all";
 
+// static UI for left bar
+// click handles to display side bar only on mobile view to toggle (hide or visible)
+
 const LeftBar = ({ toggle, setToggle }) => {
   return (
     <div className='container-left text-light'>
