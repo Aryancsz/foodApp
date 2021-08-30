@@ -10,7 +10,7 @@ const CartList = ({ data }) => {
           <div className='cat-type'>{data.catName}</div>
           <div>{data.dishPrice}</div>
         </div>
-        <div className='flex-xl-grow-1 d-flex justify-content-end'>
+        <div className='flex-grow-1 d-flex justify-content-end'>
           <div className='sub-total'>
             ${data.dishPrice?.replace("$", "") * data.qty}
           </div>
